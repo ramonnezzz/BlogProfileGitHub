@@ -22,7 +22,7 @@ export function Summary() {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const response = await api.get("/ramonnezzz");
+        const response = await api.get(`/users/ramonnezzz`); // Caminho correto
         setProfile(response.data);
       } catch (error) {
         console.error("Erro ao buscar perfil:", error);
@@ -32,6 +32,7 @@ export function Summary() {
     }
     fetchProfile();
   }, []);
+  
 
   if (loading) {
     return <p>Aguarde, carregando os dados do GitHub...</p>;
